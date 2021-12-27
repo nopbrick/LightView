@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CommandLine;
+﻿using CommandLine;
 
 namespace LightView
 {
@@ -16,11 +11,11 @@ namespace LightView
                 {
                     if (args[0].ToUpper() == "GETBASICS")
                     {
-                        Basics.GetBasics();
+                        Domains.GetBasics();
                     }
                     else if (args[0].ToUpper() == "GETDOMAIN" && args.Length > 1)
                     {
-                        Basics.GetDomain(args[1]);
+                        Domains.GetDomain(args[1]);
                     }
                     else if (args[0].ToUpper() == "GETDOMAINUSERS")
                     {
@@ -72,6 +67,28 @@ namespace LightView
                         else
                         {
                             Computers.GetDomainComputer(args[1]);
+                        }
+                    }
+                    else if (args[0].ToUpper() == "GETDOMAINGROUPS")
+                    {
+                        if (o.Server != null)
+                        {
+                            Groups.GetDomainGroups(o.Server);
+                        }
+                        else
+                        {
+                            Groups.GetDomainGroups();
+                        }
+                    }
+                    else if (args[0].ToUpper() == "GETDOMAINGROUP" && args.Length > 1)
+                    {
+                        if (o.Server != null)
+                        {
+                            Groups.GetDomainGroup(args[1], o.Server);
+                        }
+                        else
+                        {
+                            Groups.GetDomainGroup(args[1]);
                         }
                     }
                 });

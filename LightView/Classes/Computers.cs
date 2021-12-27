@@ -3,16 +3,16 @@ using System.DirectoryServices.AccountManagement;
 
 namespace LightView
 {
-    internal class Groups
+    internal class Computers
     {
-        public static void GetDomainGroups()
+        public static void GetDomainComputers()
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
-                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
-                groupPrincipal.Name = "*";
+                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
+                computerPrincipal.Name = "*";
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
@@ -22,14 +22,14 @@ namespace LightView
             }
         }
 
-        public static void GetDomainGroups(string domainServer)
+        public static void GetDomainComputers(string domainServer)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain, domainServer))
             {
-                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
-                groupPrincipal.Name = "*";
+                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
+                computerPrincipal.Name = "*";
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
@@ -39,14 +39,14 @@ namespace LightView
             }
         }
 
-        public static void GetDomainGroup(string groupName)
+        public static void GetDomainComputer(string computerName)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
-                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
-                groupPrincipal.Name = '*' + groupName + '*';
+                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
+                computerPrincipal.Name = '*' + computerName + '*';
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
@@ -56,14 +56,14 @@ namespace LightView
             }
         }
 
-        public static void GetDomainGroup(string groupName, string domainServer)
+        public static void GetDomainComputer(string computerName, string domainServer)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain, domainServer))
             {
-                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
-                groupPrincipal.Name = '*' + groupName + '*';
+                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
+                computerPrincipal.Name = '*' + computerName + '*';
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
