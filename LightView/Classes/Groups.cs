@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace LightView
 {
-    internal class Computers
+    internal class Groups
     {
-        public static void GetDomainComputers()
+        public static void GetDomainGroups()
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
-                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
-                computerPrincipal.Name = "*";
+                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
+                groupPrincipal.Name = "*";
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
@@ -26,14 +26,14 @@ namespace LightView
             }
         }
 
-        public static void GetDomainComputers(string domainServer)
+        public static void GetDomainGroups(string domainServer)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain, domainServer))
             {
-                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
-                computerPrincipal.Name = "*";
+                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
+                groupPrincipal.Name = "*";
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
@@ -43,14 +43,14 @@ namespace LightView
             }
         }
 
-        public static void GetDomainComputer(string computerName)
+        public static void GetDomainGroup(string groupName)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
-                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
-                computerPrincipal.Name = '*' + computerName + '*';
+                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
+                groupPrincipal.Name = '*' + groupName + '*';
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
@@ -60,14 +60,14 @@ namespace LightView
             }
         }
 
-        public static void GetDomainComputer(string computerName, string domainServer)
+        public static void GetDomainGroup(string groupName, string domainServer)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain, domainServer))
             {
-                ComputerPrincipal computerPrincipal = new ComputerPrincipal(principalContext);
-                computerPrincipal.Name = '*' + computerName + '*';
+                GroupPrincipal groupPrincipal = new GroupPrincipal(principalContext);
+                groupPrincipal.Name = '*' + groupName + '*';
 
-                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(computerPrincipal))
+                using (PrincipalSearcher principalSearcher = new PrincipalSearcher(groupPrincipal))
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
