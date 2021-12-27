@@ -48,6 +48,32 @@ namespace LightView
                     {
                         Trusts.GetDomainTrusts();
                     }
+                    else if (args[0].ToUpper() == "GETDOMAINCOMPUTERS" && args.Length == 1)
+                    {
+                        Computers.GetDomainComputers();
+                    }
+                    else if (args[0].ToUpper() == "GETDOMAINCOMPUTERS")
+                    {
+                        if (o.Server != null)
+                        {
+                            Computers.GetDomainComputers(o.Server);
+                        }
+                        else
+                        {
+                            Computers.GetDomainComputers();
+                        }
+                    }
+                    else if (args[0].ToUpper() == "GETDOMAINCOMPUTER" && args.Length > 1)
+                    {
+                        if (o.Server != null)
+                        {
+                            Computers.GetDomainComputer(args[1], o.Server);
+                        }
+                        else
+                        {
+                            Computers.GetDomainComputer(args[1]);
+                        }
+                    }
                 });
         }
 
