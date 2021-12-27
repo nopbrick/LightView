@@ -33,7 +33,7 @@ namespace LightView
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
                 UserPrincipal userPrincipal = new UserPrincipal(principalContext);
-                userPrincipal.Name = accountName;
+                userPrincipal.SamAccountName = accountName;
 
                 using (PrincipalSearcher principalSearcher = new PrincipalSearcher(userPrincipal))
                 {
