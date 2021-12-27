@@ -9,8 +9,6 @@ namespace LightView
 {
     internal class Trusts
     {
-        static readonly DirectoryContext _context = new DirectoryContext(DirectoryContextType.Domain, Domain.GetCurrentDomain().FindDomainController().Name);
-
         public static void GetDomainTrusts()
         {
             var trusts = Domain.GetCurrentDomain().GetAllTrustRelationships();
