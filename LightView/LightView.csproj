@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{63FF6E20-C5BA-46D9-A9E3-6C4EFABB9001}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>QueryAD</RootNamespace>
-    <AssemblyName>QueryAD</AssemblyName>
+    <RootNamespace>LightView</RootNamespace>
+    <AssemblyName>LightView</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,9 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LDAPConnection.cs" />
+    <Compile Include="Computers.cs" />
+    <Compile Include="Groups.cs" />
+    <Compile Include="Basics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trusts.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
