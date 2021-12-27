@@ -19,6 +19,14 @@ namespace LightView
             {
                 Basics.GetDomain(args[1]);
             }
+            else if (args[0].ToUpper() == "GETDOMAINUSER" && args.Length == 1)
+            {
+                Users.GetDomainUser();
+            }
+            else if (args[0].ToUpper() == "GETDOMAINUSER" && args.Length > 1)
+            {
+                Users.GetDomainUser(args[1]);
+            }
         }
     }
 }

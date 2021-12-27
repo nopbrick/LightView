@@ -11,7 +11,7 @@ namespace LightView
     internal class Users
     {
         
-        static void GetDomainUser()
+        public static void GetDomainUser()
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
@@ -28,12 +28,12 @@ namespace LightView
             }
         }
 
-        static void GetDomainUser(string accountName)
+        public static void GetDomainUser(string accountName)
         {
             using (PrincipalContext principalContext = new PrincipalContext(ContextType.Domain))
             {
                 UserPrincipal userPrincipal = new UserPrincipal(principalContext);
-                userPrincipal.SamAccountName = accountName;
+                userPrincipal.SamAccountName = '*' + accountName + '*';
 
                 using (PrincipalSearcher principalSearcher = new PrincipalSearcher(userPrincipal))
                 {
