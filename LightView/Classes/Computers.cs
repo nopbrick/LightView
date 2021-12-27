@@ -50,7 +50,14 @@ namespace LightView
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
-                        Console.WriteLine(result.Name);
+                        Console.WriteLine();
+                        Console.WriteLine($"Name: {result.Name}");
+                        Console.WriteLine($"Sid: {result.Sid}");
+                        Console.WriteLine($"DistinguishedName: {result.DistinguishedName}");
+                        Console.WriteLine($"SamAccountName: {result.SamAccountName}");
+                        Console.WriteLine($"Description: {result.Description}");
+                        Console.WriteLine($"DisplayName: {result.DisplayName}");
+                        Console.WriteLine($"UserPrincipalName: {result.UserPrincipalName}");
                     }
                 }
             }
@@ -67,7 +74,14 @@ namespace LightView
                 {
                     foreach (var result in principalSearcher.FindAll())
                     {
-                        Console.WriteLine(result.Name);
+                        Console.WriteLine();
+                        Console.WriteLine($"Name: {result.Name}");
+                        Console.WriteLine($"Sid: {result.Sid}");
+                        Console.WriteLine($"DistinguishedName: {result.DistinguishedName}");
+                        Console.WriteLine($"SamAccountName: {result.SamAccountName}");
+                        Console.WriteLine($"Description: {result.Description}");
+                        Console.WriteLine($"DisplayName: {result.DisplayName}");
+                        Console.WriteLine($"UserPrincipalName: {result.UserPrincipalName}");
                     }
                 }
             }
