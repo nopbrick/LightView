@@ -42,8 +42,11 @@ namespace LightView
                         else
                         {
                             Users.GetDomainUser(args[1]);
-                        }
-                        
+                        }   
+                    }
+                    else if (args[0].ToUpper() == "GETDOMAINTRUSTS" && args.Length == 1)
+                    {
+                        Trusts.GetDomainTrusts();
                     }
                 });
         }
