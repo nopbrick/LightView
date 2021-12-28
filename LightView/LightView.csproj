@@ -76,18 +76,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Computers.cs" />
-    <Compile Include="Classes\Groups.cs" />
-    <Compile Include="Classes\Domains.cs" />
+    <Compile Include="Modules\Computers.cs" />
+    <Compile Include="Modules\Groups.cs" />
+    <Compile Include="Modules\Domains.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Trusts.cs" />
-    <Compile Include="Classes\Users.cs" />
+    <Compile Include="Modules\Trusts.cs" />
+    <Compile Include="Modules\Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="LightView_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7">
